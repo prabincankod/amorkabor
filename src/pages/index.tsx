@@ -7,6 +7,7 @@ import TimeAgo from "javascript-time-ago";
 import { api } from "~/utils/api";
 import { HistoryIcon } from "lucide-react";
 import en from "javascript-time-ago/locale/en";
+import CategoryOnHome from "~/components/CategoryOnHome";
 export default function Home() {
   TimeAgo.setDefaultLocale(en.locale);
   TimeAgo.addLocale(en);
@@ -20,7 +21,7 @@ export default function Home() {
         <meta name="description" content="Lessgo and complete this in 2 days" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className=" mx-10 flex flex-col items-center   ">
+      <div className=" flex flex-col items-center lg:mx-10   ">
         {latestNews &&
           latestNews.map((news) => (
             <div
@@ -39,6 +40,7 @@ export default function Home() {
             </div>
           ))}
       </div>
+      <CategoryOnHome />
     </>
   );
 }
