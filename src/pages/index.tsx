@@ -7,11 +7,10 @@ import TimeAgo from "javascript-time-ago";
 import { api } from "~/utils/api";
 import { HistoryIcon } from "lucide-react";
 import en from "javascript-time-ago/locale/en";
-
 export default function Home() {
-  TimeAgo.addDefaultLocale(en);
-  const timeAgo = new TimeAgo("en-US");
-
+  TimeAgo.setDefaultLocale(en.locale)
+  TimeAgo.addLocale(en)
+  const timeAgo = new TimeAgo('en-US');
   const newsApi = api.news.getLatestNews.useQuery();
   const latestNews = newsApi.data?.data;
   return (
@@ -24,7 +23,7 @@ export default function Home() {
       <div className=" mx-10 flex flex-col items-center   ">
         {latestNews &&
           latestNews.map((news) => (
-            <div className=" py-2  flex w-full flex-col border-b text-center">
+            <div key={news.id} className=" py-2  flex w-full flex-col border-b text-center">
               <div className="lg:5xl mt-2 text-xl font-medium md:text-3xl">
                 {news.title}
               </div>
