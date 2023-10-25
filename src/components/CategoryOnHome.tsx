@@ -10,7 +10,6 @@ import {
 import { api } from "~/utils/api";
 const CategoryOnHome = () => {
   const category = api.news.getNewsForHome.useQuery();
-  console.log(category.data?.data);
   const categoryWithNews = category.data?.data;
   return (
     <>
