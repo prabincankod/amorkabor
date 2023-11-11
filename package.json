@@ -24,7 +24,7 @@
     "@trpc/next": "^10.18.0",
     "@trpc/react-query": "^10.18.0",
     "@trpc/server": "^10.18.0",
-    "axios": "^1.4.0",
+    "axios": "^1.6.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "javascript-time-ago": "^2.5.9",
