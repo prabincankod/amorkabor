@@ -32,7 +32,11 @@ const CategoryOnHome = () => {
                   {categoryAndNews.articles.map((news) => (
                     <div className="card items-center rounded-md border bg-accent">
                       <div className="image w-52 lg:w-64">
-                        <img src={news.image} className="rounded-md" alt="" />
+                        <img
+                          src={news.image as string}
+                          className="rounded-md"
+                          alt=""
+                        />
                       </div>
                       <div className="title w-52 text-center">{news.title}</div>
                     </div>
